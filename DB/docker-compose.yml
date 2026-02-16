@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  db:
+    image: mariadb:10.11
+    container_name: morphin_mariadb
+    restart: always
+    environment:
+      # Change these for your lab requirements
+      MARIADB_ROOT_PASSWORD: root_password_123
+      MARIADB_DATABASE: morphin_c2
+      MARIADB_USER: morphin_admin
+      MARIADB_PASSWORD: admin_password_123
+    ports:
+      - "3306:3306"  # Exposes MariaDB to your host machine
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+volumes:
+  mariadb_data:
