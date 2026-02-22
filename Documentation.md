@@ -49,9 +49,9 @@ Upon execution, the agent gathers the following metadata:
 
 Currently supported commands via the CommandQueue interface:
 
-Command : update_jitter
-Description : Changes the base frequency of heartbeats.
-ValueExample : 10 (sets to 10 seconds)
+- Command : update_jitter
+- Description : Changes the base frequency of heartbeats.
+- ValueExample : 10 (sets to 10 seconds)
 
 
 
