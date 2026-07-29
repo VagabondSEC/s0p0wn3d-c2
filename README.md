@@ -1,33 +1,120 @@
-# s0P0wn3d — C2 Framework
+# VIROLOGY - s0P0wn3d
 
-Projet academique EPITECH. Framework de Command & Control developpe pour simuler des intrusions furtives et evaluer les capacites de detection des SOC.
+An academic offensive security project focused on stealthy intrusion simulation and SOC response evaluation.
 
-Usage exclusivement pedagogique et en environnement autorise.
+---
+
+## Overview
+
+s0P0wn3d is an academic Command & Control (C2) framework developed as part of the VIROLOGY project at EPITECH. The objective is to design and implement a stealth-oriented offensive intrusion tool used exclusively for authorized penetration testing and defensive readiness assessment.
+
+The tool simulates long-term covert intrusions to evaluate the detection, alerting, and response capabilities of Security Operations Centers (SOCs) within enterprise environments.
+
+This project is strictly educational. Any misuse outside an explicit legal and written authorization is prohibited.
+
+---
+
+## Objectives
+
+- Design a resilient and stealthy C2 architecture
+- Maintain low operational footprint on target systems
+- Support long-lived intrusions
+- Avoid reliance on automated exploitation frameworks
+- Demonstrate understanding of offensive techniques from first principles
+
+---
 
 ## Architecture
 
-- **Controller** : serveur central pour interagir avec les implants
-- **Agent** : implant leger Windows, communication chiffree avec le controller
-- **Web App** : interface de pilotage
+s0P0wn3d follows a classic C2 model:
 
-## Fonctionnalites
+- **Controller (Server)**: Central command node used to monitor and interact with compromised hosts.
+- **Agent (Client)**: Lightweight implant running on the target system, communicating covertly with the controller.
 
-- Shell interactif sans processus visible
-- DLL Hijacking pour elevation de privileges
-- Syscalls directs pour contournement EDR
-- Chiffrement du trafic C2
-- Keylogging, enumeration locale, exfiltration
-- Pass-the-Hash, propagation laterale
-- Brute force de hashs locaux
+The architecture emphasizes minimal process creation, discrete network activity, modular command handling, fault tolerance and persistence.
 
-## Contraintes
+---
 
-Developpe sans framework d'exploitation automatise (pas de Metasploit, Mimikatz, Empire). Tout est implemente manuellement avec des librairies bas niveau (reseautage, cryptographie, APIs Windows).
+## Core Features
 
-## Environnement de test
+The C2 system supports the following capabilities:
 
-Windows 10/11, Azure VM, lab isole.
+- Remote command execution
+- Pseudo-shell interaction using built-in system commands
+- Covert communication channels
+- Credential access simulation
+- File discovery and controlled exfiltration
+- Local system enumeration
+- Persistence and resilience mechanisms
 
-## Avertissement
+---
 
-Projet strictement educatif. Ne pas deployer hors d'un environnement autorise.
+## Supported Commands
+
+Once operational, the framework exposes remote commands such as:
+
+| Command       | Description                                             |
+| ------------- | ------------------------------------------------------- |
+| `shell`       | Opens a pseudo-shell without spawning visible processes |
+| `keylog`      | Start, stop, or dump keystroke logs                     |
+| `rdp`         | Enable or disable Remote Desktop on the target          |
+| `loot`        | Locate and exfiltrate sensitive configuration files     |
+| `privesc`     | Scan for potential local privilege escalation vectors   |
+| `propagate`   | Attempt controlled lateral movement                     |
+| `crack`       | Launch local password hash cracking                     |
+| `pth`         | Perform Pass-The-Hash authentication                    |
+| `syscall`     | Execute system calls directly from userland             |
+| `phish`       | Simulate phishing email propagation                     |
+| `whateveryouwant` | Experimental / custom extensions                    |
+
+Commands may accept parameters and evolve as the project progresses.
+
+---
+
+## Testing Environment
+
+The project is validated using:
+
+- **Target OS**: Windows
+- **Infrastructure**: Microsoft Azure virtual machine
+- **Context**: Authorized lab environment with provided credentials
+
+All tests are conducted in compliance with the project's ethical and legal constraints.
+
+---
+
+## Restrictions
+
+To ensure learning integrity and stealth discipline:
+
+- No automated exploitation frameworks (Metasploit, Mimikatz, Empire, etc.)
+- No third-party malware generators
+- Low-level libraries are allowed (networking, cryptography, OS APIs)
+- All functionality must be implemented manually
+
+---
+
+## Legal & Ethical Notice
+
+This project is developed strictly for educational purposes.
+
+You must never:
+- Deploy this tool on systems you do not own
+- Operate without explicit written authorization
+- Use it outside legal penetration testing contexts
+
+Violations may lead to severe legal consequences and professional sanctions.
+
+---
+
+## Educational Value
+
+Through this project, students gain hands-on experience with C2 design principles, stealth tradecraft, defensive evasion awareness, Windows internals, offensive security methodology and SOC detection challenges.
+
+---
+
+## Status
+
+**Version:** v1.1
+**Project:** VIROLOGY
+**Institution:** EPITECH
