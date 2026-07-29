@@ -1,4 +1,4 @@
-# VIROLOGY - s0P0wn3d
+# s0P0wn3d
 
 An academic offensive security project focused on stealthy intrusion simulation and SOC response evaluation.
 
